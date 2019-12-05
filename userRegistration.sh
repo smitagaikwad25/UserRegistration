@@ -58,12 +58,26 @@ function validateMobileNumFormat()
 
 }
 
+function validatePassword()
+{
+	echo "Enter Password :"
+	read  password
+	passwordPattern="^[a-zA-Z]{8}$"
+	if [[ $password =~ $passwordPattern ]]
+	then
+		echo "It is valid"
+	else
+		echo "It is invalid"
+	fi
+}
+
 function main()
 {
-	validateFirstName
-	validateLastName
-	validateEmailId
-	validateMobileNumFormat
+#	validateFirstName
+#	validateLastName
+#	validateEmailId
+#	validateMobileNumFormat
+	validatePassword
 }
 main
 
