@@ -1,6 +1,9 @@
 #!/bin/bash
 echo "WelCome in user registration"
 
+passwordPattern="^[a-z]{8}$"
+passWordPattern1="(.*[A-Z].*){1}"
+
 function validateFirstName()
 {
 	echo "Enter your first name :"
@@ -62,8 +65,8 @@ function validatePassword()
 {
 	echo "Enter Password :"
 	read  password
-	passwordPattern="^[a-zA-Z]{8}$"
-	if [[ $password =~ $passwordPattern ]]
+     if  [[ ${#password} -ge 6 && "$password" == *[[:lower:]]* && "$password" == *[[:upper:]]*  ]]
+
 	then
 		echo "It is valid"
 	else
