@@ -31,7 +31,7 @@ function  validateLastName()
 
 function validateEmailId()
 {
-	echo "Enter your email id"
+	echo "Enter your email id :"
 	read mailId
 	mailPattern="^[a-zA-Z]{1,}([+_-.]{1})?[0-9a-zA-Z]*[@]{1}[a-zA-Z0-9]{1,}[.]{1}[a-zA-Z]{2,4}[.]{1}*[a-zA-Z]{2,3}*$"
 	if [[ $mailId =~ $mailPattern ]]
@@ -42,11 +42,28 @@ function validateEmailId()
 	fi
 }
 
+function validateMobileNumFormat()
+{
+	echo "Enter your mobile number :"
+	read  mobileNum
+	mobileNumPattern="^[0-9]{2}[[:space:]][0-9]{10}$"
+	if [[ $mobileNum =~ $mobileNumPattern ]]
+	then
+		echo "It is valid"
+	else
+		echo "It is invalid"
+	fi
+
+
+
+}
+
 function main()
 {
 	validateFirstName
 	validateLastName
 	validateEmailId
+	validateMobileNumFormat
 }
 main
 
