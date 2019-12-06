@@ -58,7 +58,7 @@ function validatePassword()
 {
 	echo "Enter Password :"
 	read  password
-	if  [[ ${#password} -ge 6 && "$password" == *[[:lower:]]* && "$password" == *[[:upper:]]* && "$password" == *[0-9]*  ]]
+	if  [[ ${#password} -ge 8 && "$password" == *[[:lower:]]* && "$password" == *[[:upper:]]* && "$password" == *[0-9]* && "$password" == *[[@#^*]]{1}* ]]
 	then
 		echo "It is valid"
 	else
@@ -68,10 +68,10 @@ function validatePassword()
 
 function main()
 {
-	validateFirstName
-	validateLastName
-	validateEmailId
-	validateMobileNumFormat
+#	validateFirstName
+#	validateLastName
+#	validateEmailId
+#	validateMobileNumFormat
 	validatePassword
 }
 main
