@@ -68,10 +68,10 @@ function validatePassword()
 
 function main()
 {
-#	validateFirstName
-#	validateLastName
-#	validateEmailId
-#	validateMobileNumFormat
+	validateFirstName
+	validateLastName
+	validateEmailId
+	validateMobileNumFormat
 	validatePassword
 }
 main
